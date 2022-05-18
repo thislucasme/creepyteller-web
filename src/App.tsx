@@ -61,6 +61,7 @@ export const App = () => {
       showMsg()
 
     });
+    setData([])
 
   }
 

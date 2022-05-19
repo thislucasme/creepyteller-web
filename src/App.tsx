@@ -50,11 +50,13 @@ export const App = () => {
   }
 
   async function enviarD(trigramParam: string[]) {
-    await setDoc(doc(db, "creepypastas", generateId()), {
+    const idHash = generateId();
+    await setDoc(doc(db, "creepypastas", idHash), {
       title: titulo,
       autor: titulo,
       trigram: data,
       img: linkIcon,
+      id: idHash,
       teller: creepyPasta,
       data: Timestamp.fromDate(new Date())
     }).then(() => {
